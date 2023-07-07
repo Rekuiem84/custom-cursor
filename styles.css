@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	color-scheme: dark;
+}
+body {
+	font-family: sans-serif;
+	background-color: #121212;
+	color: #e0e0e0;
+	min-height: 100vh;
+	min-height: 100dvh;
+	display: grid;
+	place-items: center;
+}
+/* form style */
+.cursor-selection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 2rem;
+	border-radius: 1rem;
+	padding: 1rem;
+	background-color: #303030;
+}
+.cursor-selection input {
+	accent-color: salmon;
+	width: 2rem;
+	height: 2rem;
+	margin-block: 0.5rem 1.3rem;
+}
+/* Custom cursor */
+#cursor {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	pointer-events: none;
+	/*  */
+	width: 50px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+.cursor-selection > input[value="0"]:checked ~ #cursor {
+	background-color: yellow;
+	opacity: 0.6;
+}
+
+.cursor-selection > input[value="1"]:checked ~ #cursor {
+	border: 2px solid white;
+	transform-origin: top left;
+	animation: pulse 1.2s infinite;
+}
+@keyframes pulse {
+	from {
+		scale: 1;
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	to {
+		scale: 1.5;
+		opacity: 0;
+	}
+}
+
+.cursor-selection > input[value="2"]:checked ~ #cursor {
+	background: white;
+	animation: rainbow 3s infinite alternate;
+	opacity: 0.7;
+}
+@keyframes rainbow {
+	from {
+		background: red;
+	}
+	20% {
+		background: yellow;
+	}
+	40% {
+		background: green;
+	}
+	60% {
+		background: cyan;
+	}
+	80% {
+		background: blue;
+	}
+	to {
+		background: magenta;
+	}
+}
+
+.cursor-selection > input[value="3"]:checked ~ #cursor {
+	background-image: url("https://i.gifer.com/origin/76/76dfca2a58c4dff5c9827b527132bda8.gif");
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 80px;
+}
+
+.cursor-selection > input[value="4"]:checked ~ #cursor {
+	width: 10px;
+	background: hsla(0 0% 100% / 50%);
+	outline: 3px solid white;
+	outline-offset: 20px;
+}

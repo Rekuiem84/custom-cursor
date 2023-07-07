@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Custom Cursor</title>
+  <link rel='stylesheet' href='styles.css' />
+  <script src='script.js' defer></script>
+</head>
+
+<body>
+  <main>
+    <form method="get" class="cursor-selection">
+      <label for="cursor-choice">Cursor 1</label>
+      <input type="radio" name="cursor-choice" value="0" checked>
+      <label for="cursor-choice">Cursor 2</label>
+      <input type="radio" name="cursor-choice" value="1">
+      <label for="cursor-choice">Cursor 3</label>
+      <input type="radio" name="cursor-choice" value="2">
+      <label for="cursor-choice">Cursor 4</label>
+      <input type="radio" name="cursor-choice" value="3">
+      <label for="cursor-choice">Cursor 5</label>
+      <input type="radio" name="cursor-choice" value="4">
+      <label for="hide">Hide default cursor</label>
+      <input type="checkbox" id="hideCursor">
+      <label for="smooth">Smooth cursor</label>
+      <input type="checkbox" id="smoothCursor" checked>
+      <div id="cursor"></div>
+    </form>
+  </main>
+</body>
+
+</html>
