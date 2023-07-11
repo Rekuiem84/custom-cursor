@@ -11,6 +11,7 @@ Sixth project of [this challenge](https://github.com/Rekuiem84/personal-challeng
 CSS :
 
 - **accent-color**
+- **@media(pointer:fine)**
 
 JS :
 
@@ -18,3 +19,4 @@ JS :
 - **mouseMove.clientX** and **mouseMove.clientY** to get the position of the mouse on the screen
 - **element.animate()** to make the custom cursor smooth
 - conditional operator instead of if...else
+- **matchMedia("(mediaQuery)").matches** to check if a media query is applied

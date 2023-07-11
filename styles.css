@@ -34,78 +34,84 @@ body {
 	margin-block: 0.5rem 1.3rem;
 }
 /* Custom cursor */
-#cursor {
-	position: absolute;
-	transform: translate(-50%, -50%);
-	z-index: 9999;
-	pointer-events: none;
-	/*  */
-	width: 50px;
-	aspect-ratio: 1;
-	border-radius: 50%;
-}
+@media (pointer: fine) {
+	/* Only activates when the user is using a mouse */
+	/* To check stylus, use pointer: coarse, for touch, use pointer: none */
+	#cursor {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+		pointer-events: none;
+		/*  */
+		width: 50px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		top: -50px;
+		left: -50px;
+	}
 
-.cursor-selection > input[value="0"]:checked ~ #cursor {
-	background-color: yellow;
-	opacity: 0.6;
-}
+	.cursor-selection > input[value="0"]:checked ~ #cursor {
+		background-color: yellow;
+		opacity: 0.6;
+	}
 
-.cursor-selection > input[value="1"]:checked ~ #cursor {
-	border: 2px solid white;
-	transform-origin: top left;
-	animation: pulse 1.2s infinite;
-}
-@keyframes pulse {
-	from {
-		scale: 1;
-		opacity: 0;
+	.cursor-selection > input[value="1"]:checked ~ #cursor {
+		border: 2px solid white;
+		transform-origin: top left;
+		animation: pulse 1.2s infinite;
 	}
-	20% {
-		opacity: 1;
+	@keyframes pulse {
+		from {
+			scale: 1;
+			opacity: 0;
+		}
+		20% {
+			opacity: 1;
+		}
+		to {
+			scale: 1.5;
+			opacity: 0;
+		}
 	}
-	to {
-		scale: 1.5;
-		opacity: 0;
-	}
-}
 
-.cursor-selection > input[value="2"]:checked ~ #cursor {
-	background: white;
-	animation: rainbow 3s infinite alternate;
-	opacity: 0.7;
-}
-@keyframes rainbow {
-	from {
-		background: red;
+	.cursor-selection > input[value="2"]:checked ~ #cursor {
+		background: white;
+		animation: rainbow 3s infinite alternate;
+		opacity: 0.7;
 	}
-	20% {
-		background: yellow;
+	@keyframes rainbow {
+		from {
+			background: red;
+		}
+		20% {
+			background: yellow;
+		}
+		40% {
+			background: green;
+		}
+		60% {
+			background: cyan;
+		}
+		80% {
+			background: blue;
+		}
+		to {
+			background: magenta;
+		}
 	}
-	40% {
-		background: green;
-	}
-	60% {
-		background: cyan;
-	}
-	80% {
-		background: blue;
-	}
-	to {
-		background: magenta;
-	}
-}
 
-.cursor-selection > input[value="3"]:checked ~ #cursor {
-	background-image: url("https://i.gifer.com/origin/76/76dfca2a58c4dff5c9827b527132bda8.gif");
-	background-size: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	width: 80px;
-}
+	.cursor-selection > input[value="3"]:checked ~ #cursor {
+		background-image: url("https://i.gifer.com/origin/76/76dfca2a58c4dff5c9827b527132bda8.gif");
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 80px;
+	}
 
-.cursor-selection > input[value="4"]:checked ~ #cursor {
-	width: 10px;
-	background: hsla(0 0% 100% / 50%);
-	outline: 3px solid white;
-	outline-offset: 20px;
+	.cursor-selection > input[value="4"]:checked ~ #cursor {
+		width: 10px;
+		background: hsla(0 0% 100% / 50%);
+		outline: 3px solid white;
+		outline-offset: 20px;
+	}
 }
